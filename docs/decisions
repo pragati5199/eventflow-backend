@@ -1,0 +1,26 @@
+# EventFlow – Key Design Decisions
+
+## Decision 1: Use Java 17
+- Long-term support (LTS)
+- Modern language features
+- Industry standard for backend systems
+
+## Decision 2: Use Spring Boot
+- Mature ecosystem
+- Strong community support
+- Built-in production readiness
+
+## Decision 3: Start as a Monolith
+- Simplifies transaction management
+- Avoids premature microservices complexity
+- Easier to reason about concurrency early
+
+## Decision 4: Use PostgreSQL
+- Strong transactional guarantees
+- Widely used in production systems
+- Excellent support for locking and isolation levels
+
+## Decision 5: Disable Database Auto-Config Initially
+- Focus on domain and architecture first
+- Avoid premature infrastructure setup
+- Enable DB once persistence layer is ready

@@ -1,0 +1,41 @@
+# EventFlow – Architecture
+
+## Architecture Style
+
+EventFlow is implemented as a **modular monolithic backend**.
+
+### Why Monolith First
+- Faster development and iteration
+- Easier debugging and tracing
+- Clear ownership of transactions
+- Avoids premature distributed complexity
+
+The system is designed so that individual modules can later be extracted into microservices if needed.
+
+## High-Level Layers
+
+1. Controller Layer
+   - Handles HTTP requests and responses
+   - Performs request validation
+   - No business logic
+
+2. Service Layer
+   - Contains core business logic
+   - Manages transactions
+   - Enforces business rules
+
+3. Repository Layer
+   - Handles database access
+   - Uses JPA abstractions
+
+4. Domain Layer
+   - Core entities (Event, Booking)
+   - Represents business state
+
+## Technology Choices
+
+- Java 17
+- Spring Boot
+- Maven
+- PostgreSQL (planned)
+- JPA / Hibernate

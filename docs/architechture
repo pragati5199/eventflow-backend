@@ -1,0 +1,28 @@
+# EventFlow – Requirements
+
+## Functional Requirements
+
+1. The system should allow creation of events with a fixed total capacity.
+2. Users should be able to view events and see remaining available capacity.
+3. Users should be able to book seats for an event.
+4. The system must prevent overbooking under concurrent requests.
+5. Users should be able to cancel a booking and release capacity.
+
+## Non-Functional Requirements
+
+### Consistency
+- The system must never allow total booked seats to exceed total capacity.
+
+### Scalability
+- The system should handle high traffic spikes for popular events.
+
+### Reliability
+- Booking operations should be atomic and safe under failure.
+
+### Maintainability
+- Codebase should follow layered architecture and clear separation of concerns.
+
+## Out of Scope (For Now)
+- Payments
+- Authentication / Authorization
+- UI / Frontend
