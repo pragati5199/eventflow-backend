@@ -55,7 +55,7 @@ public class Event {
         if (seats + availableCapacity > totalCapacity) {
             throw new IllegalStateException("Releasing seats exceeds total capacity");
         }
-        this.availableCapacity -= seats;
+        this.availableCapacity += seats;
     }
 
     public UUID getId() {
