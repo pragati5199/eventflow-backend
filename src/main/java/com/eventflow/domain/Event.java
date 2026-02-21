@@ -1,18 +1,39 @@
 package com.eventflow.domain;
 
 import com.eventflow.exception.CapacityExceededException;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Entity
+@Table(name = "events")
 public class Event {
 
-    private final UUID id;
-    private final String name;
+    @Id
+    @Column(nullable = false, updatable = false)
+    private UUID id;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(name = "total_capacity", nullable = false, updatable = false)
     private int totalCapacity;
+
+    @Column(name = "available_capacity", nullable = false)
     private int availableCapacity;
-    private final LocalDateTime eventTime;
-    private final LocalDateTime createdAt;
+
+    @Column(name = "event_time", nullable = false, updatable = false)
+    private LocalDateTime eventTime;
+
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
+    public Event() {
+    }
 
     public Event(String name, int totalCapacity, LocalDateTime eventTime ){
         if (name == null || name.isEmpty()){
